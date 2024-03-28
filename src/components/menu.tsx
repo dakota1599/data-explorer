@@ -24,6 +24,7 @@ export const Menu = ({ children }: WithChildren) => {
                 </Button>
                 {rows.map((item, index) => (
                     <Button
+                        key={index}
                         fullWidth
                         variant="contained"
                         onClick={() => onClick(index)}
