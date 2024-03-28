@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { useAppSelector } from "../../util/hooks";
 import { TableView } from "../views";
-import { FlexColumn } from "..";
+import { FlexColumn, Menu, MenuItem } from "..";
 
 export const Home = () => {
     const fileState = useAppSelector((state) => state.file);
@@ -13,7 +13,11 @@ export const Home = () => {
             <Typography variant="h4" textAlign="left">
                 {fileState.name}
             </Typography>
-            <TableView state={fileState} width="50%" height="50em" />
+            <Menu>
+                <MenuItem title="Table">
+                    <TableView state={fileState} />
+                </MenuItem>
+            </Menu>
         </FlexColumn>
     );
 };
