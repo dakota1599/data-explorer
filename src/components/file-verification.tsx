@@ -24,7 +24,7 @@ const SetFile = () => {
         const file = e.target.files[0];
         fr.readAsText(file);
         fr.onload = () => {
-            dispatch(setFile(String(fr.result)));
+            dispatch(setFile([file.name, String(fr.result)]));
         };
     };
 
